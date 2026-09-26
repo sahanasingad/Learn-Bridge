@@ -1,51 +1,69 @@
-# The Five Hard Constraints
+# Learn Bridge — Five Hard Constraints
 
-[← Back to README](../README.md)
+← Back to [README](../README.md)
 
-<!-- The problem statement names five constraints that decide whether a solution would hold up
-in Mysuru. Be honest: ✅ handled · ⚠️ partial · ❌ not yet. Timestamps point to the video. -->
+Learn Bridge is a browser-based learning platform for Music, Public Speaking & Communication, and Python.
 
-| # | Constraint | Status | Video |
+The following constraints describe the important technical and functional limitations of the current implementation.
+
+| # | Constraint | Status | Evidence / Test |
 |---|---|---|---|
-| 1 | Fake, spam and harassment reports | `<✅/⚠️/❌>` | `<mm:ss>` |
-| 2 | Unclear jurisdiction | `<...>` | `<...>` |
-| 3 | Prioritisation beyond "most votes" | `<...>` | `<...>` |
-| 4 | Bad input (duplicate, fake photo, wrong location, abuse) | `<...>` | `<...>` |
-| 5 | Works without internet | `<...>` | `<...>` |
+| 1 | Student and mentor data is stored locally in the browser | ✅ | Account, progress and submission data are stored using browser storage |
+| 2 | Audio/video features depend on browser permissions and support | ⚠️ | MediaRecorder and browser permissions are required |
+| 3 | Python execution depends on Pyodide being available | ⚠️ | Pyodide is downloaded when Python is first used |
+| 4 | Large recordings and attachments depend on browser storage capacity | ⚠️ | Recordings and files are stored in IndexedDB |
+| 5 | The application does not currently provide cloud synchronization | ⚠️ | Data remains on the browser/device used by the student or mentor |
 
 ---
 
-## 1. Fake, spam and harassment reports
+## 1. Local Browser Data
 
-- **Approach:** `<signals used, thresholds, human review?>`
-- **Anonymity trade-off:** `<how you keep honest anonymous reports while limiting abuse>`
-- **Code:** `src/<...>`
+### Constraint
 
-## 2. Unclear jurisdiction
+The current version of Learn Bridge stores application data in the user's browser rather than in a central server database.
 
-- **Approach:** `<boundary data, buffer zones, confidence score, shared queue, escalation>`
-- **What happens in a boundary case:** `<...>`
-- **Code:** `src/<...>`
+### Approach
 
-## 3. Prioritisation
+The application uses:
 
-- **Formula / rules:** `<e.g. severity × sensitive-location weight × unique reporters × age>`
-- **Why not simply "most votes":** `<...>`
-- **Code:** `src/<...>`
+- `localStorage` for smaller application data.
+- `IndexedDB` for recordings and larger media/files.
 
-## 4. Bad input
+Examples of locally stored information include:
 
-| Input | What our system does |
-|---|---|
-| Duplicate report | `<...>` |
-| Fake / unrelated photo | `<...>` |
-| Wrong or impossible location | `<...>` |
-| Abusive message | `<...>` |
-| `<Anything else you tested>` | `<...>` |
+- User accounts
+- Sessions
+- Student progress
+- Activities
+- Exercise results
+- Submissions
+- Mentor feedback
+- Audio/video recordings
+- File attachments
 
-## 5. Offline operation
+### Why this constraint exists
 
-- **What works offline:** `<...>`
-- **How it syncs:** `<queue, retry, conflict handling>`
-- **What does not work offline:** `<...>`
-- **How to test:** see [setup.md](./setup.md#testing-offline-mode)
+The current version is designed as a lightweight browser-based application that does not require a dedicated backend server.
+
+### Consequence
+
+Data stored in one browser is not automatically available in another browser or another computer.
+
+For example:
+
+```text
+Computer A
+    ↓
+Chrome
+    ↓
+Learn Bridge
+    ↓
+Student data
+
+Computer B
+    ↓
+Chrome
+    ↓
+Learn Bridge
+    ↓
+Different browser storage

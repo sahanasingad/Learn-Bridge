@@ -133,7 +133,7 @@ The completed decision log is also available in the repository:
 
 | Field | Value |
 |---|---|
-| Live URL | **No public deployment yet** |
+| Live URL | **https://learn-bridge-wmkc.onrender.com** |
 | Platform | **Web application** |
 | Local MVP URL | `http://localhost:5500` |
 | Test login | Student account can be created directly in the application |

@@ -124,3 +124,9 @@ Paste the first 16 characters.
 - [ ] We will not modify or replace any linked file after 20 Sept 2026, 23:59 IST.
 
 **Submitted by:** `<Team Leader name>` · **Date/Time (IST):** `<20-09-2026 21:40>`
+## Decision Log
+
+**Team:** AI Tech  
+**Team ID:** HM26-1F8A  
+
+**Decision Log PDF:** [HM26-1F8A Decision Log](https://drive.google.com/file/d/1BpsflXzH7m6LqsT03V5PVLaeMfhTC2dI/view?usp=drivesdk)

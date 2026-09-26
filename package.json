@@ -1,0 +1,9 @@
+{
+  "name": "learn-bridge",
+  "version": "1.0.0",
+  "description": "Learn Bridge: a student and mentor learning portal for Music, Public Speaking & Communication, and Python.",
+  "scripts": {
+    "start": "npx --yes http-server . -p 5500 -c-1 -o"
+  },
+  "license": "MIT"
+}

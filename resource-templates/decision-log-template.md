@@ -1,56 +1,41 @@
-# Decision Log — Template (25% of total score)
+# Decision Log — Learn Bridge
 
-[← Back to README](../README.md)
+**Team:** AI Tech (HM26-1F8A)  
+**Sub-problem:** Browser-based learning, recording and Python execution  
+**Date:** 27 Sept 2026
 
-> **Output:** 1-page PDF, A4, ≥ 10 pt font, named `<TeamID>_decision-log.pdf`, uploaded to Google Drive and linked in [`resource.md`](../resource.md).
-> **Length:** 400–550 words. If it spills onto page 2, cut. Reviewers stop at page 1.
-> **Voice:** Your own words, first person plural ("we"). No marketing. No generic AI prose.
-> Delete everything in *italics* and all blockquotes before exporting.
+## Q1. What approach did we take, and what did we reject?
 
----
+### Our approach
 
-**Team:** `<Team Name>` (`<Team ID>`)  **Sub-problem:** `<e.g. Verification>`  **Date:** `20 Sept 2026`
+We chose a **browser-first learning platform with local browser storage**. Learn Bridge runs as a static web application using HTML, CSS and JavaScript. We use localStorage for accounts, sessions, progress and application data, while IndexedDB stores recordings and uploaded files. Music uses browser audio capabilities, speaking activities use browser recording and speech features, and Python exercises run with Pyodide inside a Web Worker.
 
-## Q1. What approach did we take, and what did we reject? (~150 words)
+### Alternative we considered and rejected
 
-**Our approach:** `<Name it in one line, e.g. "Trust score = weighted blend of duplicate-proximity, photo EXIF/location consistency and reporter history, with a human-review band between 0.4 and 0.7.">`
+We considered building a full client-server application with a backend database and cloud storage for recordings. This looked attractive because student and mentor data could be shared between devices and stored centrally. We rejected it because it would add backend development, database setup, authentication, cloud media storage and deployment complexity to the project.
 
-*How it works in 3–4 sentences: inputs → logic → output. Mention the specific data you used.*
-
-**Alternative we considered and rejected:** `<e.g. "Mandatory OTP-verified identity for every report.">`
-
-*What it is in 1–2 sentences, and why it looked attractive at first.*
-
-## Q2. Why did we reject it? The trade-off (~150 words)
+## Q2. Why did we reject it? The trade-off
 
 | Dimension | Our approach | Rejected alternative |
 |---|---|---|
-| `<e.g. Honest reporting / anonymity>` | `<...>` | `<...>` |
-| `<e.g. Spam resistance>` | `<...>` | `<...>` |
-| `<e.g. Works offline / low-end phones>` | `<...>` | `<...>` |
-| `<e.g. Build effort in 72 h>` | `<...>` | `<...>` |
+| Build effort | Simple static application; faster to develop | Backend, database and authentication required |
+| Data sharing | Data stays in the browser | Central data can be shared across devices |
+| Recordings | Stored locally in IndexedDB | Cloud media storage could handle larger files |
+| Offline/local use | Many features work without a backend | Backend connection is normally required |
+| Security | Suitable for a project/demo | Stronger production authentication can be implemented |
 
-*In 2–3 sentences: which dimension decided it, and what we consciously gave up by choosing our approach. Name the cost.*
+The main deciding factor was development complexity and time. Our browser-first approach allowed us to build and demonstrate Music, Speaking and Python features without creating a complete backend system. We consciously accept that data is tied to the browser and device. If a user clears browser storage or changes computers, locally saved accounts, recordings and progress are not automatically transferred.
 
-> A strong answer names a **cost** you accepted, e.g. "We accept that a coordinated group of real phones can still game the score." A weak answer lists only benefits.
+## Q3. What breaks at larger scale?
 
-## Q3. What breaks at the scale of all of Mysuru? (~150 words)
+Learn Bridge currently works well as a browser-based student project, but several parts would become difficult with thousands of students. If 1,000 students each created 20 recordings averaging 5 MB, the recordings alone would represent about **100 GB** of data. Browser storage would not be appropriate for that scale. Mentor review would also become difficult if thousands of submissions arrived without a centralized queue, notifications and database. Python execution would need stronger resource controls if many users ran programs at the same time, while speech and video features would continue to depend on individual browser capabilities and permissions.
 
-*Assume ~65 wards plus surrounding town and gram panchayats, thousands of reports a day, festival spikes (Dasara), and patchy connectivity.*
+The first change we would make is to introduce a **secure backend with a centralized database and cloud media storage**. This would allow accounts, progress, submissions and mentor feedback to synchronize across devices while moving large recordings out of browser storage.
 
-| What breaks first | Why (with a rough number) | How we'd fix it |
-|---|---|---|
-| `<e.g. Duplicate check is O(n) over all open complaints>` | `<~50k open items → seconds per insert>` | `<Geospatial index / geohash bucketing>` |
-| `<e.g. Offline sync conflicts>` | `<...>` | `<...>` |
-| `<e.g. Human review queue>` | `<...>` | `<...>` |
+## Self-check
 
-*One closing line: the single change we would make first, and why.*
-
----
-
-### Self-check before exporting
-
-- [ ] Exactly one approach and one clearly rejected alternative named.
-- [ ] At least one cost or downside of **our** approach is admitted.
-- [ ] Q3 contains at least one concrete number or estimate.
-- [ ] Every team member can explain this page without notes.
+- [x] One approach and one clearly rejected alternative are named.
+- [x] A cost of our approach is admitted.
+- [x] Q3 contains concrete numbers and estimates.
+- [x] The decision is specific to Learn Bridge.
+- [x] Every team member can explain this page without notes.

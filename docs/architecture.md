@@ -1,75 +1,76 @@
-# Architecture
+# Learn Bridge Architecture
 
-[← Back to README](../README.md)
+← Back to [README](../README.md)
+
+## System Overview
+
+Learn Bridge is a browser-based student and mentor learning portal for:
+
+- Music
+- Public Speaking & Communication
+- Python
+
+The application is designed as a client-side web application. Most application data is stored locally in the user's browser, so the project can run without a dedicated backend server.
+
+Students can:
+
+1. Create an account or log in.
+2. Select a learning activity.
+3. Practise through interactive exercises.
+4. Record music or speaking activities.
+5. Run Python programs.
+6. Submit their work.
+7. View mentor feedback.
+8. Track their learning progress.
+
+Mentors can:
+
+1. Log in using a mentor account.
+2. View students and submissions.
+3. Review student work.
+4. Add notes and feedback.
+5. Provide corrected Python code.
+6. Attach or provide media feedback.
+7. Assign activities to students.
+
+---
 
 ## System Diagram
 
-<!-- Required: a diagram, not just text. Mermaid renders natively on GitHub.
-An exported PNG under docs/images/ is also fine. -->
-
-```mermaid
-flowchart LR
-    A[Citizen App<br/>PWA · offline queue] -->|sync when online| B[API Server]
-    W[Field Worker App] --> B
-    B --> C[(Database)]
-    B --> D[Routing / Scoring Service]
-    D --> E[(Ward & Panchayat<br/>Boundary Data)]
-    B --> F[Public Status Dashboard]
-```
-
-## Request Walkthrough
-
-<!-- Trace ONE real request end-to-end, e.g. "citizen files a complaint". -->
-
-1. `<Client captures photo + GPS, stores in local queue>`
-2. `<On reconnect, POST /api/complaints>`
-3. `<Server checks duplicates within 50 m / 7 days>`
-4. `<Routing service resolves jurisdiction + confidence>`
-5. `<Complaint lands in the right queue; citizen sees status>`
-
-## Components
-
-| Component | Responsibility | Tech | Code location |
-|---|---|---|---|
-| `<Client>` | `<...>` | `<...>` | `src/<...>` |
-| `<API>` | `<...>` | `<...>` | `src/<...>` |
-| `<Data store>` | `<...>` | `<...>` | `src/<...>` |
-| `<ML / rules engine>` | `<...>` | `<...>` | `src/<...>` |
-
-## Data Model
-
-```mermaid
-erDiagram
-    COMPLAINT ||--o{ STATUS_UPDATE : has
-    COMPLAINT }o--|| JURISDICTION : routed_to
-    COMPLAINT }o--o| HOTSPOT : grouped_into
-    USER ||--o{ COMPLAINT : files
-```
-
-| Entity | Key fields | Notes |
-|---|---|---|
-| `<Complaint>` | `<id, type, lat, lng, photo_url, trust_score, status>` | `<...>` |
-| `<...>` | `<...>` | `<...>` |
-
-## Key APIs
-
-| Method | Endpoint | Purpose | Auth |
-|---|---|---|---|
-| `POST` | `/api/complaints` | `<...>` | `<anonymous / token>` |
-| `GET` | `/api/wards/:id/status` | `<...>` | `<public>` |
-
-## Tech Stack
-
-| Layer | Choice | Why this over alternatives |
-|---|---|---|
-| Frontend | `<...>` | `<...>` |
-| Backend | `<...>` | `<...>` |
-| Database | `<...>` | `<...>` |
-| ML / AI | `<...>` (details in [ai.md](../ai.md#3-ai-inside-the-product-runtime)) | `<...>` |
-| Hosting | `<...>` | `<...>` |
-
-## Data Sources
-
-| Dataset | Source & licence | Real or synthetic | Used for |
-|---|---|---|---|
-| `<Ward boundaries>` | `<...>` | `<...>` | `<...>` |
+```text
+                         LEARN BRIDGE
+                              |
+              +---------------+---------------+
+              |                               |
+              v                               v
+        Public Pages                    User Authentication
+              |                               |
+              +---------------+---------------+
+                              |
+                              v
+                     Student / Mentor Portal
+                              |
+          +-------------------+-------------------+
+          |                   |                   |
+          v                   v                   v
+       Music             Public Speaking       Python
+       Studio                Studio             Studio
+          |                   |                   |
+          |                   |                   |
+          v                   v                   v
+      Web Audio          MediaRecorder       Pyodide
+      Exercises          Speech APIs         Web Worker
+          |                   |                   |
+          +-------------------+-------------------+
+                              |
+                              v
+                     Browser Storage
+                              |
+                  +-----------+-----------+
+                  |                       |
+                  v                       v
+             localStorage              IndexedDB
+                  |                       |
+                  |                       |
+          Accounts, progress,       Recordings and
+          submissions, feedback     uploaded media

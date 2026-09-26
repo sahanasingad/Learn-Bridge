@@ -1,6 +1,6 @@
 # Learn Bridge — Phase 1 Submission Index
 
-This is the landing file for the Learn Bridge submission. Reviewers can use this file to find the project documentation, submission artifacts, live MVP and testing instructions.
+This is the landing file for the Learn Bridge submission. Reviewers can use this file to find the project documentation, submission artifacts, local MVP instructions, testing information and project details.
 
 ---
 
@@ -10,32 +10,32 @@ This is the landing file for the Learn Bridge submission. Reviewers can use this
 |---|---|
 | Team ID | **HM26-1F8A** |
 | Team Name | **AI Tech** |
-| College(s) | `<FILL THIS>` |
-| Team Leader | `<FILL THIS — name · email · phone>` |
+| College | **GSSSIETW** |
+| Team Leader | **Manasa M N** |
 | Repository | https://github.com/sahanasingad/Learn-Bridge |
 
 ### Team Members
 
 | # | Member | Program & Year | GitHub Handle | Primary Role |
 |---|---|---|---|---|
-| 1 | `<FILL THIS>` (Lead) | `<FILL THIS>` | `@<FILL THIS>` | Frontend / Integration |
-| 2 | `<FILL THIS>` | `<FILL THIS>` | `@<FILL THIS>` | `<FILL THIS>` |
-| 3 | `<FILL THIS>` | `<FILL THIS>` | `@<FILL THIS>` | `<FILL THIS>` |
-| 4 | `<FILL THIS>` | `<FILL THIS>` | `@<FILL THIS>` | `<FILL THIS>` |
+| 1 | **Manasa M N** (Lead) | CSEAIML & 2nd Year | `43manasa2007-prog` | Frontend / Integration |
+| 2 | **Sahana M Singad** | CSEAIML & 2nd Year | `Sahanasingad` | Application Logic / Data Storage |
+| 3 | **Prerana L** | CSEAIML & 2nd Year | `preranalokash06-ai` | Testing |
+| 4 | **Sinchana** | CSEAIML & 2nd Year | `sinchana532007-gif` | Data Storage / Documentation |
 
 ---
 
-## 2. What We Built
+# 2. What We Built
 
-### Sub-problem
+## Sub-problem
 
 **Browser-based learning, practice, recording and mentor feedback**
 
-### One-line description
+## One-line description
 
 **Learn Bridge is a student and mentor learning portal for Music, Public Speaking & Communication, and Python, where students practise through interactive browser-based activities and mentors review their work, provide feedback and assign further learning tasks.**
 
-### Main learning areas
+## Main Learning Areas
 
 Learn Bridge provides three main learning categories:
 
@@ -43,11 +43,49 @@ Learn Bridge provides three main learning categories:
 2. **Public Speaking & Communication**
 3. **Python**
 
-The application is designed to allow students to practise directly in the browser without requiring a separate desktop application.
+The application allows students to practise directly in the browser without requiring a separate desktop application.
+
+### Music
+
+Students can practise music through browser-based activities including:
+
+- Piano
+- Guitar
+- Violin
+- Drum kit
+- Interactive exercises
+- Metronome
+- Audio recording and playback
+
+### Public Speaking & Communication
+
+Students can practise:
+
+- Self introduction
+- Presentations
+- Debate
+- Interview preparation
+- Pronunciation and accent
+- Timed speaking activities
+- Audio/video recording
+- Speech analysis features
+
+### Python
+
+Students can learn and practise:
+
+- Variables and data types
+- Conditions and loops
+- Object-oriented programming
+- Mini projects
+- Code execution
+- Output and error checking
+- Input-based programs
+- Corrected code and mentor feedback
 
 ---
 
-## 3. Repository Documents
+# 3. Repository Documents
 
 | Document | What it covers |
 |---|---|
@@ -58,7 +96,7 @@ The application is designed to allow students to practise directly in the browse
 | `docs/setup.md` | Local setup, running the application and testing instructions |
 | `docs/limitations.md` | Known limitations, edge cases, scaling considerations and future scope |
 | `docs/mentor-accounts.md` | Demo mentor accounts for project testing |
-| `resource-templates/` | Submission templates and guides |
+| `resource-templates/` | Submission templates and project documentation templates |
 | `resource-templates/decision-log-template.md` | Completed Learn Bridge decision log |
 | `index.html` | Main application page |
 | `css/styles.css` | Application styling and responsive layout |
@@ -70,22 +108,22 @@ The application is designed to allow students to practise directly in the browse
 
 The evaluation artifacts are stored on Google Drive and linked below.
 
-| # | Artifact | Google Drive Link | File Name | SHA-256 (first 16 chars) |
-|---|---|---|---|---|
-| 1 | Pitch + Code Walkthrough Video (≤ 10 min, MP4) | `<FILL THIS WITH GOOGLE DRIVE VIDEO LINK>` | `HM26-1F8A_video.mp4` | `<FILL THIS>` |
-| 2 | Decision Log (1 page, PDF) | [HM26-1F8A Decision Log](https://drive.google.com/file/d/1BpsflXzH7m6LqsT03V5PVLaeMfhTC2dI/view?usp=drivesdk) | `HM26-1F8A_decision-log.pdf` | `<FILL THIS>` |
-| 3 | Presentation (≤ 10 slides, PDF) | `<FILL THIS WITH GOOGLE DRIVE PRESENTATION LINK>` | `HM26-1F8A_presentation.pdf` | `<FILL THIS>` |
+| # | Artifact | Google Drive Link | File Name |
+|---|---|---|---|
+| 1 | Pitch + Code Walkthrough Video | `<ADD GOOGLE DRIVE VIDEO LINK WHEN READY>` | `HM26-1F8A_video.mp4` |
+| 2 | Decision Log | [HM26-1F8A Decision Log](https://drive.google.com/file/d/1BpsflXzH7m6LqsT03V5PVLaeMfhTC2dI/view?usp=drivesdk) | `HM26-1F8A_decision-log.pdf` |
+| 3 | Presentation | `<ADD GOOGLE DRIVE PRESENTATION LINK WHEN READY>` | `HM26-1F8A_presentation.pdf` |
 
-### Decision Log
+## Decision Log
 
 **Team:** AI Tech  
 **Team ID:** HM26-1F8A
 
-The Decision Log explains the main technical decision made while developing Learn Bridge: using a browser-first architecture with local browser storage and browser-based execution for Music, Speaking and Python features.
+The Decision Log documents our main technical decision for Learn Bridge: using a browser-first architecture with local browser storage and browser-based execution for Music, Public Speaking & Communication, and Python.
 
 **Decision Log PDF:** [HM26-1F8A Decision Log](https://drive.google.com/file/d/1BpsflXzH7m6LqsT03V5PVLaeMfhTC2dI/view?usp=drivesdk)
 
-The completed decision log is also available in the repository at:
+The completed decision log is also available in the repository:
 
 `resource-templates/decision-log-template.md`
 
@@ -95,29 +133,18 @@ The completed decision log is also available in the repository at:
 
 | Field | Value |
 |---|---|
-| Live URL | `<FILL THIS IF YOU HAVE A DEPLOYED LIVE URL>` |
+| Live URL | **No public deployment yet** |
 | Platform | **Web application** |
-| Test login | Student account can be created from the application; demo mentor accounts are documented in `docs/mentor-accounts.md` |
-| Sample data loaded? | **Demo mentor accounts are provided. Student data can be created during testing.** |
-| How to test locally | Run `npm start` from the `learn-bridge` folder and open `http://localhost:5500` |
-| If the live link is unavailable | Follow `docs/setup.md` for local setup |
+| Local MVP URL | `http://localhost:5500` |
+| Test login | Student account can be created directly in the application |
+| Mentor testing | Demo mentor accounts are documented in `docs/mentor-accounts.md` |
+| Sample data | Student data can be created during testing; demo mentor accounts are provided |
+| How to run | Run `npm start` from the `learn-bridge` folder |
+| Setup instructions | See `docs/setup.md` |
 
-### Local application URL
+## Local Application
 
-When running locally with Node.js:
+The Learn Bridge MVP is currently tested locally using:
 
 ```text
 http://localhost:5500
-## Testing
-
-The Learn Bridge MVP was tested locally using the following core workflows:
-
-- Student account creation and login
-- Music instruments and exercises
-- Public Speaking activities and recording
-- Python code execution and error handling
-- Mentor login and student submission review
-- Mentor feedback and corrected code
-- Browser-local storage of accounts, progress and recordings
-
-The application was tested using Google Chrome and Microsoft Edge.

@@ -142,6 +142,33 @@ The completed decision log is also available in the repository:
 | How to run | Run `npm start` from the `learn-bridge` folder |
 | Setup instructions | See `docs/setup.md` |
 
+# 6. Testing
+
+The Learn Bridge MVP was tested locally using the following core workflows:
+
+- Student account creation and login
+- Music instruments and exercises
+- Music recording and playback
+- Public Speaking activities and recording
+- Python code execution
+- Python output and error handling
+- Mentor login
+- Student submission review
+- Mentor feedback
+- Corrected Python code
+- Browser-local storage of accounts, progress and recordings
+
+The application was tested using Google Chrome and Microsoft Edge.
+
+### Testing Result
+
+The main student and mentor workflows were tested successfully in the local development environment.
+
+The application was accessed through:
+
+```text
+http://localhost:5500
+
 ## Local Application
 
 The Learn Bridge MVP is currently tested locally using:

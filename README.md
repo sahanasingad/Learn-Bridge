@@ -1,63 +1,101 @@
 # Learn Bridge
 
-A student and mentor learning portal for **Music**, **Public Speaking & Communication** and **Python**.
+A student and mentor learning portal for **Music**, **Public Speaking & Communication**, and **Python**.
 
-Students log in, choose an activity, practise in a built-in studio and send their work to a mentor. Mentors accept students, review the work, point out mistakes, send corrected code, voice feedback, notes and media, and assign new tasks. Students see the feedback, improve and track their progress.
+Students log in, choose an activity, practise in a built-in studio, and send their work to a mentor. Mentors can accept students, review their work, point out mistakes, send corrected code, provide feedback and media, and assign new tasks. Students can then view the feedback, improve their work, and track their progress.
 
 ## Activities
 
-**Music (4):** Piano, Guitar, Violin, Drum kit
-- Playable virtual instruments (mouse, touch or computer keyboard), with note-name or keyboard-shortcut labels, volume and octave
-- Record what you play straight from the instrument (no microphone needed), Mark notes and play them together, metronome
-- Exercises with 10 questions and a score: read notes on the treble staff, find keys, build major chords, name notes on the fretboard, identify drums by ear, copy drum patterns
-- Inspired by the free exercises and instruments on musicca.com; all code, sound and graphics here are original
+### Music
 
-**Public Speaking & Communication (5):** Self introduction, Presentation skills, Debate, Interview preparation, Pronunciation and accent
-- Each activity shows a course paragraph, and each exercise shows the paragraph or topic to speak on
-- Automatic timer: a preparation countdown, then recording starts and stops by itself when the speaking time is up
-- Audio or video recording; live transcript, words per minute, filler words and reading accuracy in Chrome and Edge
+Learn Bridge includes four virtual instruments:
 
-**Python (4):** Variables and data types, Loops and conditions, Object oriented programming, Mini project
-- Code editor with line numbers; Run shows the output and errors with the error line highlighted and a tip
-- Input box for programs that use input(); a 10-second limit stops infinite loops
-- Check my answer runs automatic tests; mentors can run the student's code, see a model solution and send corrected code
+1. Piano
+2. Guitar
+3. Violin
+4. Drum Kit
 
-## Run it
+Features include:
 
-**Option A: VS Code + Live Server (easiest)**
-1. Open this folder in VS Code (File → Open Folder).
-2. Install the **Live Server** extension when VS Code suggests it (or search "Live Server" by Ritwick Dey in Extensions).
-3. Right-click `index.html` → **Open with Live Server**. The app opens at http://127.0.0.1:5500.
+- Playable virtual instruments using mouse, touch, or computer keyboard
+- Note-name and keyboard-shortcut labels
+- Volume and octave controls
+- Recording directly from the virtual instrument without a microphone
+- Note marking and playback
+- Metronome
+- Music exercises with 10 questions and scoring
+- Treble staff note reading
+- Finding keys
+- Building major chords
+- Naming notes on the fretboard
+- Identifying drums by ear
+- Copying drum patterns
 
-**Option B: terminal**
-- With Node.js: `npm start`
-- With Python: `python -m http.server 5500`, then open http://localhost:5500
+The music activities are inspired by free music-learning exercises and instruments available on musicca.com. The code, sound generation, and graphics used in Learn Bridge are original project work.
 
-Use a local server rather than double-clicking `index.html`, so the microphone, camera and Python runner work.
+### Public Speaking & Communication
 
-**Internet:** needed the first time you press Run in a Python exercise (the browser downloads Python, about 10 MB, from cdn.jsdelivr.net) and for the fonts. Music and speaking work offline. Use Chrome or Edge for the live speech transcript.
+Learn Bridge includes five speaking activities:
 
-## Project structure
+1. Self Introduction
+2. Presentation Skills
+3. Debate
+4. Interview Preparation
+5. Pronunciation and Accent
 
-```
-learn-bridge/
-├── index.html               Page shell
-├── css/styles.css           All styles (light and dark mode, responsive)
-├── js/core.js               Utilities, local database (localStorage), sessions
-├── js/catalog.js            Activities, exercises, demo mentors, media storage, downloads
-├── js/components.js         Microphone/camera recorder, file attachments, media viewer
-├── js/music-studio.js       Piano, guitar, violin, drum kit, drills, metronome (Web Audio)
-├── js/speech-and-code.js    Timed speech studio and Python runner (Pyodide in a Web Worker)
-├── js/public-views.js       Home page, login / create account, mentor profile
-├── js/student.js            Student portal: activities, exercises, submissions, progress
-├── js/mentor-and-app.js     Mentor portal, review, routing, events, app start
-└── docs/mentor-accounts.md  Demo mentor logins (team reference only)
-```
+Features include:
 
-## Data
+- Course paragraphs and speaking topics
+- Preparation countdown before recording
+- Automatic recording timer
+- Audio recording
+- Video recording
+- Live speech transcript
+- Words-per-minute calculation
+- Filler-word detection
+- Reading accuracy
+- Browser-based speech features
 
-Everything is stored in the browser: accounts and work in `localStorage`, recordings and files in `IndexedDB`. Use the same browser on the same computer for student and mentor. To reset, clear the site data in the browser.
+Google Chrome and Microsoft Edge are recommended for the best speech-recognition support.
 
-## Demo mentors
+### Python
 
-See `docs/mentor-accounts.md`. All demo mentors use the password `mentor123`.
+Learn Bridge includes four Python activities:
+
+1. Variables and Data Types
+2. Loops and Conditions
+3. Object Oriented Programming
+4. Mini Project
+
+Features include:
+
+- Code editor with line numbers
+- Running Python programs in the browser
+- Output and error display
+- Error line highlighting and tips
+- Input box for programs using `input()`
+- 10-second execution limit to help prevent infinite loops
+- Automatic tests using **Check My Answer**
+- Model solutions
+- Mentor code execution
+- Corrected code sent by mentors
+
+Python execution is provided using Pyodide in a Web Worker.
+
+## Run It
+
+Learn Bridge is a browser-based application and can be run using a local web server.
+
+### Option A: VS Code + Live Server
+
+1. Open the `learn-bridge` folder in VS Code.
+2. Install the **Live Server** extension if it is not already installed.
+3. Open `index.html`.
+4. Right-click `index.html`.
+5. Select **Open with Live Server**.
+6. The application will open in your browser.
+
+The address will normally look like:
+
+```text
+http://127.0.0.1:5500

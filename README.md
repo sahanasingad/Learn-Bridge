@@ -99,9 +99,3 @@ The address will normally look like:
 
 ```text
 http://127.0.0.1:5500
-## Decision Log
-
-**Team:** AI Tech  
-**Team ID:** HM26-1F8A
-
-**Decision Log PDF:** [HM26-1F8A Decision Log](https://drive.google.com/file/d/1BpsflXzH7m6LqsT03V5PVLaeMfhTC2dI/view?usp=drivesdk)

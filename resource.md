@@ -108,3 +108,16 @@ When running locally with Node.js:
 
 ```text
 http://localhost:5500
+## Testing
+
+The Learn Bridge MVP was tested locally using the following core workflows:
+
+- Student account creation and login
+- Music instruments and exercises
+- Public Speaking activities and recording
+- Python code execution and error handling
+- Mentor login and student submission review
+- Mentor feedback and corrected code
+- Browser-local storage of accounts, progress and recordings
+
+The application was tested using Google Chrome and Microsoft Edge.

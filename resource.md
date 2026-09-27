@@ -112,7 +112,7 @@ The evaluation artifacts are stored on Google Drive and linked below.
 |---|---|---|---|
 | 1 | Pitch + Code Walkthrough Video | `<ADD GOOGLE DRIVE VIDEO LINK WHEN READY>` | `HM26-1F8A_video.mp4` |
 | 2 | Decision Log | [HM26-1F8A Decision Log](https://drive.google.com/file/d/1BpsflXzH7m6LqsT03V5PVLaeMfhTC2dI/view?usp=drivesdk) | `HM26-1F8A_decision-log.pdf` |
-| 3 | Presentation | [HM26-1F8A Presentation](https://drive.google.com/file/d/1lesmXMd4BZHZ-wg-4R31v1spf2gKL6zO/view?usp=drivesdk) | HM26-1F8A_presentation.pdf |
+| 3 | Presentation | [HM26-1F8A Presentation](https://drive.google.com/file/d/1lesmXMd4BZHZ-wg-4R31v1spf2gKL6zO/view?usp=drivesdk) | `HM26-1F8A_presentation.pdf` |
 
 ## Decision Log
 
